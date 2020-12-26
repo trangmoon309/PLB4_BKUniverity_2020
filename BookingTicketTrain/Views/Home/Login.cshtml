@@ -1,0 +1,18 @@
+﻿
+
+@section Styles
+{
+    <link href="~/css/login.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Merriweather+Sans:wght@500&display=swap" rel="stylesheet">
+}
+
+@model AppClient;
+<div class="loading">Welcome to Station</div>
+<form class="login" asp-controller="Home" asp-action="Login" method="post">
+    <input type="text" asp-for="@Model.Username" placeholder="Username">
+    <input type="password"  asp-for="@Model.Password"  name="passWord" placeholder="Password">
+    <button style=" display: block; margin: auto">Login</button>
+</form>
+
+<a href="https://codepen.io/davinci/" target="_blank">check my other pens</a>
+

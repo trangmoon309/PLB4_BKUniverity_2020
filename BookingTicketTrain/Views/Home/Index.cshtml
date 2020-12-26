@@ -1,0 +1,112 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_MyLayout";
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="~/css/homepage.css" rel="stylesheet" />
+}
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+    <img class="w3-image" src="~/img/bg2.jpg" alt="Architecture" width="1500" height="800">
+    <div class="w3-display-middle w3-margin-top w3-center">
+        <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>QANDT</b></span> <span class="w3-hide-small w3-text-light-grey">Train Station</span></h1>
+    </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+    <!-- Project Section -->
+    <div class="w3-container w3-padding-32" id="projects">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Trip List</h3>
+    </div>
+
+    <div class="w3-row-padding" id="projects">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Ha Noi</div>
+                <a asp-controller="Schedule" asp-action="GetListSchedule" asp-route-desCountryName="Hà Nội" >
+                    <img src="https://sanvemaybay.vn/includes/uploads/2019/06/ha-noi.jpg" alt="House" style="height: 220px" class="trip">
+                </a>
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Da Nang</div>
+                <a asp-controller="Schedule" asp-action="GetListSchedule" asp-route-desCountryName="Đà Nẵng">
+                    <img src="https://cdn3.ivivu.com/2017/05/ngam-cau-rong-phun-lua-phun-nuoc-trai-nghiem-phai-thu-khi-den-du-lich-Da-Nang-ivivu-1.jpg" alt="House" style="height:220px" class="trip">
+                </a>
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Ho Chi Minh</div>
+                <a asp-controller="Schedule" asp-action="GetListSchedule" asp-route-desCountryName="Hồ Chí Minh">
+                    <img src="https://nld.mediacdn.vn/2020/5/21/tp-hcm-1590048422442641952466.jpg" alt="House" style="height:220px" class="trip">
+                </a>
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Da Lat</div>
+                <a asp-controller="Schedule" asp-action="GetListSchedule" asp-route-desCountryName="Đà Lạt">
+                    <img src="https://dulichconvoi.com/wp-content/uploads/2019/05/qu%E1%BA%A3ng-tr%C6%B0%E1%BB%9Dng-l%C3%A2m-vi%C3%AAn.jpg" alt="House" style="height:220px" class="trip">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-row-padding">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Vung Tau</div>
+                <a asp-controller="Schedule" asp-action="GetListSchedule" asp-route-desCountryName="Vũng Tàu">
+                    <img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/08/ccimage-shutterstock_340187063.jpg" alt="House" style="height:220px" class="trip">
+                </a>
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Quy Nhon</div>
+                <a asp-controller="Schedule" asp-action="GetListSchedule" asp-route-desCountryName="Quy Nhơn">
+                    <img src="https://saigonriders.com/wp-content/uploads/2018/11/best-places-to-visit-in-quy-nhon-saigon-riders.jpg" alt="House" style="height:220px" class="trip">
+                </a>
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Nha Trang</div>
+                <a asp-controller="Schedule" asp-action="GetListSchedule" asp-route-desCountryName="Nha Trang">
+                    <img src="https://baokhanhhoa.vn/dataimages/202004/original/images5401474_nhatrang.jpg" alt="House" style="height:220px" class="trip">
+                </a>
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Hue</div>
+                <a asp-controller="Schedule" asp-action="GetListSchedule" asp-route-desCountryName="Huế">
+                    <img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/08/ccimage-shutterstock_340187063.jpg" alt="House" style="height:220px" class="trip">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="w3-container w3-padding-32" id="about">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
+        <p>
+            Saigon Railway Station is a large Vietnamese train station in District 3, Ho Chi Minh City, about 1 km from the city center. Saigon Railway Station is the last station on the North-South railway, the end point of the Vietnam railway. This is one of the most important stations on the North-South railway which is the terminal station of the Southern region to the Central and Northern provinces. Today Saigon Railway Station is different from Saigon Railway Station under the French colonial period and Republic of Vietnam. <br /> <br />
+            The original Saigon Railway Station was built by the French in the 23/9 Park area near Ben Thanh market, inaugurated in 1885. From here on, the railway lines Saigon - My Tho, Saigon - Loc Ninh and Saigon In 1978, implementing the urban planning renovation policy of the People's Committee of Ho Chi Minh City, Saigon station moved to Binh Trieu station, and upgraded and repaired Hoa Hung cargo station. It used to become the current Saigon passenger station. In November 1983, Saigon Railway Station was officially put into operation and operated.
+        </p>
+    </div>
+    <!-- Image of location/map -->
+    <div class="w3-container">
+        <img src="https://www.godrej.ind.in/godrej-air-hoodi/files/2018/04/godrej-air-location.png" class="w3-image" style="width:100%">
+    </div>
+
+    <!-- End page content -->
+</div>

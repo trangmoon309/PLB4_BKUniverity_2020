@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewData["Title"] = "Create Schedule";
+    Layout = "_MyLayout";
+}
+@section Styles
+{
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+    <style>
+
+    </style>
+}
+
+@{ 
+    var stationList = StationStore.AllStations;
+    var seatList = SeatStore.AllSeats;
+    var countryList = CountryStore.ListCountry;
+}
+@model BookingTicketTrain.Models.Schedule;
+
+<div class="container"style="margin-top:120px;margin-bottom:120px;">
+    <form asp-controller="Schedule" asp-action="CreateSchedule" method="post">
+        <h2>Create new schedule</h2>
+        <div class="row" style="margin-top:40px;">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="from">Country From</label>
+                    <select id="from" class="form-control" asp-for="@Model.CountryFrom">
+                        @foreach (var item in countryList)
+                        {
+                            <option value="@item">@item</option>
+                        }
+                    </select>                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="to">Country To</label>
+                    <select id="to" class="form-control" asp-for="@Model.CountryTo">
+                        @foreach (var item in countryList)
+                        {
+                            <option value="@item">@item</option>
+                        }
+                    </select>                </div>
+            </div>
+            <!--  col-md-6   -->
+        </div>
+
+
+        <div class="form-group">
+            <label for="stationName">Station Name</label>
+            <select id="stationName" class="form-control" asp-for="@Model.StationName">
+                @foreach (var item in stationList)
+                {
+                    <option value="@item">@item</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="seatName">Seat</label>
+            <select id="seatName" class="form-control" asp-for="@Model.Seat">
+                @foreach (var item in seatList)
+                {
+                    <option value="@item">@item</option>
+                }
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Create</button>
+        <button type="reset" class="btn btn-light" style="margin-top: 20px;">Cancel</button><br /><br />
+        @if (ViewBag.Result == true)
+        {
+            <span class="text-success">Create Successfully!</span>
+        }
+        else if(ViewBag.Result == false)
+        {
+            <span class="text-danger">Create Unsuccessfully!</span>
+        }
+        else
+        {
+
+        }
+    </form>
+    <div asp-validation-summary="All" class="text-danger"></div>
+</div>

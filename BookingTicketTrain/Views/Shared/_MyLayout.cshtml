@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BookingTicketTrain</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+
+
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+            <a asp-controller="Home" asp-action="Index" class="w3-bar-item w3-button"><b>QT</b> Train Station</a>
+            <form asp-controller="Home" asp-action="Logout" method="post">
+                <!-- Float links to the right. Hide them on small screens -->
+                <div class="w3-right w3-hide-small">
+                    <a href="#projects" class="w3-bar-item w3-button">Trip List</a>
+                    <a asp-controller="Schedule" asp-action="CreateSchedule" class="w3-bar-item w3-button">Create Schedule</a>
+                    @if (ViewBag.checkLogin != null && ViewBag.checkLogin == true)
+                    {
+                        <button type="submit" class="w3-bar-item w3-button">Logout</button>
+                    }
+                    else
+                    {
+                        <a asp-controller="Home" asp-action="Login" class="w3-bar-item w3-button">Login</a>
+                    }
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @RenderBody()
+
+
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-16">
+        <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">Xin chào và hẹn gặp lại</a></p>
+    </footer>
+</body>
+</html>
